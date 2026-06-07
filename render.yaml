@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: vehicle-damage-insurance-api
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: "*"
+        sync: false
+      - key: PYTHONUNBUFFERED
+        value: "1"
+        sync: false
+
+databases:
+  - name: vehicle-damage-db
+    databaseName: vehicle_damage_db
+    user: postgres
+    region: oregon
