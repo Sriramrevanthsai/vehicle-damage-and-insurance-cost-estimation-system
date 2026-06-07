@@ -4,8 +4,8 @@ opencv-python-headless
 numpy
 python-multipart
 ultralytics
-torch==2.1.0
-torchvision==0.16.0
+torch==2.12.0
+torchvision==0.17.0
 psycopg2-binary
 python-dotenv
 sqlalchemy
