@@ -2,15 +2,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "framework": "react",
-  "env": {
-    "REACT_APP_API_BASE": "@react_app_api_base"
-  },
-  "envPrefix": "REACT_APP_",
-  "git": {
-    "deploymentEnabled": {
-      "main": true
-    }
-  },
   "rewrites": [
     {
       "source": "/(.*)",
