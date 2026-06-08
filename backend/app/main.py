@@ -47,3 +47,11 @@ def health_check():
         "model": "RT-DETR-L custom best.pt",
         "pipeline": ["preprocessing", "damage detection", "severity analysis", "cost estimation"],
     }
+
+@app.get("/api")
+def api_health():
+    return {
+        "status": "ok",
+        "model": "RT-DETR-L custom best.pt",
+        "pipeline": ["preprocessing", "damage detection", "severity analysis", "cost estimation"],
+    }
