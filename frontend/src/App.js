@@ -175,6 +175,20 @@ function App() {
     }
   };
 
+  const handleApproveClaim = async (claimId) => {
+    setError("");
+    setLoading(true);
+    try {
+      await apiFetch(`/claims/${claimId}/approve`, { method: "PATCH", token });
+      await loadClaims();
+      setError("Claim approved successfully!");
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const printReport = () => window.print();
 
   if (!user) {
@@ -234,7 +248,9 @@ function App() {
 
       <nav className="nav-tabs">
         <button className={view === "assess" ? "active" : ""} onClick={() => setView("assess")}>New Assessment</button>
-        <button className={view === "admin" ? "active" : ""} onClick={() => { setView("admin"); loadClaims(); }}>Admin Dashboard</button>
+        {user.role === "admin" && (
+          <button className={view === "admin" ? "active" : ""} onClick={() => { setView("admin"); loadClaims(); }}>Admin Dashboard</button>
+        )}
         <button className={view === "history" ? "active" : ""} onClick={() => { setView("history"); loadClaims(); }}>Claim History</button>
         <button className={view === "report" ? "active" : ""} disabled={!activeResult} onClick={() => setView("report")}>Report</button>
       </nav>
