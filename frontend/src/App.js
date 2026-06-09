@@ -332,7 +332,12 @@ function App() {
                     <td>{claim.severity}</td>
                     <td>{claim.num_damages}</td>
                     <td>{claim.estimated_cost_range}</td>
-                    <td><button className="link-action" type="button" onClick={() => openClaim(claim.id)}>Open</button></td>
+                    <td>
+                      <button className="link-action" type="button" onClick={() => openClaim(claim.id)}>Open</button>
+                      {user.role === "admin" && claim.status !== "Approved" && (
+                        <button className="link-action" type="button" onClick={() => handleApproveClaim(claim.id)}>Approve</button>
+                      )}
+                    </td>
                   </tr>
                 ))}
               </tbody>
