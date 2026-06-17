@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 
 const API_BASE = getApiBase();
@@ -193,8 +194,9 @@ function App() {
 
   if (!user) {
     return (
-      <main className="auth-shell">
-        <section className="auth-panel">
+      <>
+        <main className="auth-shell">
+          <section className="auth-panel">
           <div className="brand-block">
             <span className="eyebrow">RT-DETR-L Insurance Assist</span>
             <h1>Vehicle Damage Claim Portal</h1>
@@ -230,10 +232,13 @@ function App() {
           </form>
         </section>
       </main>
+      <Analytics />
+      </>
     );
   }
 
   return (
+    <>
     <main className="app-shell">
       <header className="topbar">
         <div>
@@ -367,6 +372,8 @@ function App() {
         </section>
       )}
     </main>
+    <Analytics />
+    </>
   );
 }
 
