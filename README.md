@@ -566,3 +566,13 @@ The project was checked with:
 - Ultralytics RT-DETR documentation: https://docs.ultralytics.com/models/rtdetr/
 - OpenCV CLAHE documentation: https://docs.opencv.org/3.4/d6/dc7/group__imgproc__hist.html
 - 2026 India denting/painting market range reference: https://www.ridenrepair.com/blog-details/car-denting-painting-cost-india-2026-full-breakdown
+
+
+## License & Usage
+
+All rights reserved. No one may use, copy, modify, or distribute this software 
+for any purpose without explicit written permission from the author. 
+
+If you would like to use this project, please contact me at: sriramrevanthsai2005@gmail.com
+
+
